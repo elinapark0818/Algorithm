@@ -1,15 +1,12 @@
 n = int(input())
-scoreList = input().split()
+scoreList = list(map(int, input().split()))
+scoreMax = max(scoreList)
+fakeAverage = 0
 
-test = list(map(int, scoreList))
+for i in range(0, n):
+    scoreList[i] = (scoreList[i] / scoreMax) * 100
+    fakeAverage += scoreList[i]
 
-fakeMax = 0
-for i in range(n):
-    if fakeMax < test[i]:
-        fakeMax = test[i]
-for i in range(n):
-    test[i] = (test[i] / fakeMax) * 100
-fakeSum = 0
-for i in range(n):
-    fakeSum += test[i]
-print(fakeSum / n)
+fakeAverage = fakeAverage / n
+
+print('%.2f'%fakeAverage)
