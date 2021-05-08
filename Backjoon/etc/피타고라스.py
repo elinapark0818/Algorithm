@@ -5,8 +5,8 @@ import math
 n = input()
 m = input()
 
-a = float(n)
-b = float(m)
+a = int(n)
+b = int(m)
 c = (a * a) + (b * b)
 
 print("빗변의 길이는", math.sqrt(c))
