@@ -34,7 +34,7 @@ while True:
         break
     max_n = max(n)
     n.remove(max_n)
-    if n[0]**2 + n[1]**2 == max_n**2:
+    if n[0] ** 2 + n[1] ** 2 == max_n ** 2:
         print('right')
     else:
         print('wrong')
