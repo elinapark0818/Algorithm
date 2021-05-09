@@ -4,6 +4,7 @@
 # m = int(x) + int(n)
 # print(m)
 
+
 # n = int(input())
 # a = 0
 #
@@ -17,6 +18,7 @@
 #     if i == n:
 #         print(0)
 
+
 # n = int(input())
 # for i in range(n+1):
 #     i_str = str(i)
@@ -28,19 +30,32 @@
 #
 # print(i if i != n else 0)
 
+# 함수 이름이 길어서 헷갈리넹..
+# N = int(input())  # 목표 분해합
+# low = 0
+#
+# def get_devided_num(low_n):
+#     e = list(map(int, str(low_n)))
+#     devided_num = low_n + sum(e)
+#     return devided_num
+#
+# while get_devided_num(low) != N:
+#     if low == N:
+#         low = 0
+#         break
+#     else:
+#         low += 1
+# print(low)
 
-N = int(input())  # 목표 분해합
-low = 0
 
-def get_devided_num(low_n):
-    e = list(map(int, str(low_n)))
-    devided_num = low_n + sum(e)
-    return devided_num
+N = int(input())
+result = 0
 
-while get_devided_num(low) != N:
-    if low == N:
-        low = 0
+for i in range(1, N+1):
+    a = list(map(int, str(i)))
+    s = i + sum(a)
+    if(s == N):
+        result = i
         break
-    else:
-        low += 1
-print(low)
+
+print(result)
