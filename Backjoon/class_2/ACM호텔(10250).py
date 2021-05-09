@@ -35,21 +35,45 @@
 #     print(a * 100 + b)
 
 # t 입력
+# t = int(input())
+# for i in range(t):
+#     # h,w,n 입력
+#     h, w, n = map(int, input().split())
+#     # x축은 n을 h로 나눴을때의 몫+1
+#     x = n // h + 1
+#     # n(사람 수)이 h(층 수)로 나누어질때
+#     if n % h == 0:
+#         y = h
+#         # x축은 n을 h로 나눈 몫이다
+#         x = n // h
+#     # n(사람 수)이 h(층 수)로 나누어지지 않는다면 층수만 올라간다
+#     else:
+#         # y축은 층수이다
+#         y = n % h
+#     # 결과값은 층수가 100자리부터 시작하니까 *100 하고서 x축 값을 더한것
+#     result = y * 100 + x
+#     print(result)
+
+# t = int(input())
+# for _ in range(t):
+#     h, w, n = map(int, input().split())
+#     x = (n // h) + 1
+#     if n % h == 0:
+#         y = h
+#         x = n // h
+#     else:
+#         y = n % h
+#     roomNumber = y * 100 + x
+#     print(roomNumber)
+
 t = int(input())
-for i in range(t):
-    # h,w,n 입력
+for _ in range(t):
     h, w, n = map(int, input().split())
-    # x축은 n을 h로 나눴을때의 몫+1
-    x = n // h + 1
-    # n(사람 수)이 h(층 수)로 나누어질때
+    x = (n // h) + 1
     if n % h == 0:
-        y = h
-        # x축은 n을 h로 나눈 몫이다
         x = n // h
-    # n(사람 수)이 h(층 수)로 나누어지지 않는다면 층수만 올라간다
+        y = h
     else:
-        # y축은 층수이다
         y = n % h
-    # 결과값은 층수가 100자리부터 시작하니까 *100 하고서 x축 값을 더한것
-    result = y * 100 + x
+    result = (y * 100) + x
     print(result)
