@@ -17,13 +17,30 @@
 #     if i == n:
 #         print(0)
 
-n = int(input())
-for i in range(n+1):
-    i_str = str(i)
-    total = i
-    for j in i_str:
-        total += int(j)
-    if total == n:
-        break
+# n = int(input())
+# for i in range(n+1):
+#     i_str = str(i)
+#     total = i
+#     for j in i_str:
+#         total += int(j)
+#     if total == n:
+#         break
+#
+# print(i if i != n else 0)
 
-print(i if i != n else 0)
+
+N = int(input())  # 목표 분해합
+low = 0
+
+def get_devided_num(low_n):
+    e = list(map(int, str(low_n)))
+    devided_num = low_n + sum(e)
+    return devided_num
+
+while get_devided_num(low) != N:
+    if low == N:
+        low = 0
+        break
+    else:
+        low += 1
+print(low)
