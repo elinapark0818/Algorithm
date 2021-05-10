@@ -6,6 +6,6 @@ n = int(input())
 beeHome = 1  # 순서 1부터 시작한당
 count = 1  # 벌집이 1개부터 시작한당
 while n > beeHome:
-    beeHome = beeHome + (count * 6)
+    beeHome += count * 6
     count += 1
 print(count)
