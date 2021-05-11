@@ -16,12 +16,12 @@ print(result)
 # itertools, combinations 를 이용한 방법
 from itertools import combinations
 
-card_num, target_num = map(int, input().split())
-card_list = list(map(int, input().split()))
-biggest_num = 0
+N, M = map(int, input().split())
+cards = list(map(int, input().split()))
+result = 0
 
-for cards in combinations(card_list, 3):
-    temp_sum = sum(cards)
-    if biggest_num < temp_sum <= target_num:
-        biggest_num = temp_sum
-print(biggest_num)
+for card in combinations(cards, 3):
+    cards_sum = sum(card)
+    if result < cards_sum <= M:
+        result = cards_sum
+print(result)
