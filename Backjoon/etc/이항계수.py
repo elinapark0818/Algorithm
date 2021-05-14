@@ -26,6 +26,7 @@ def bino_coef(n, k):
         return 0
     # 1
     cache = [[-1 for _ in range(n + 1)] for _ in range(n + 1)]
+
     # 2
     # choose 함수는 times 번까지 got 개를 선택했을 때,
     # 최종적으로 n 번의 기회를 소진 시에 선택한 개수가 k 가 되는 경우의 수를 반환하는 함수이다.
@@ -54,3 +55,11 @@ def bino_coef(n, k):
 
     # 6
     return choose(0, 0)
+
+
+import math
+
+n, k = map(int, input().split())
+
+result = math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+print(result)
