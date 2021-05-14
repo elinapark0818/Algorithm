@@ -1,6 +1,5 @@
 import math
 
-
 # n = int(input())
 # print(math.factorial(n))
 
@@ -25,7 +24,7 @@ import math
 # 단순 반복문
 a = int(input())
 
-sum = 1
-for i in range(a):
-    sum *= i + 1
-print(sum)
+result = 1
+for i in range(1, a + 1, 1):
+    result *= i
+print(result)
