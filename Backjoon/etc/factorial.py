@@ -1,5 +1,6 @@
 import math
 
+
 # n = int(input())
 # print(math.factorial(n))
 
@@ -21,10 +22,21 @@ import math
 # y = int(input())
 # print(factorial_2(y))
 
-# 단순 반복문
-a = int(input())
+#
+def factorial(n):
+    if (n > 1):
+        return n * factorial(n - 1)
+    else:
+        return 1
 
-result = 1
-for i in range(1, a + 1, 1):
-    result *= i
-print(result)
+
+a = int(input())
+print(factorial(a))
+
+# 단순 반복문
+# a = int(input())
+#
+# result = 1
+# for i in range(1, a + 1, 1):
+#     result *= i
+# print(result)
