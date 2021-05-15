@@ -9,19 +9,19 @@
 
 # ----------------
 #
-# a, b = map(int, input().split())
-#
-#
-# def binomial(N, K):
-#     if N == K:
-#         return 1
-#     elif K == 0:
-#         return 1
-#     else:
-#         return binomial(N - 1, K - 1) + binomial(N - 1, K)
-#
-#
-# print(binomial(a, b))
+N, K = map(int, input().split())
+
+
+def binomial(N, K):
+    if N == K:
+        return 1
+    elif K == 0:
+        return 1
+    else:
+        return binomial(N - 1, K - 1) + binomial(N - 1, K)
+
+
+print(binomial(N, K))
 
 # ----------------
 #
@@ -44,9 +44,9 @@
 
 # ----------------
 
-import math
-
-n, k = map(int, input().split())
-
-result = math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
-print(result)
+# import math
+#
+# n, k = map(int, input().split())
+#
+# result = math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+# print(result)
