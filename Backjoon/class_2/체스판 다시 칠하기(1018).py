@@ -97,3 +97,40 @@ for i in range(N - 7):
 
 # 바꿔야 할 개수의 최소값
 print(min(repair))
+
+
+# 홀수/짝수 if문
+def check_WB(ex):
+    count_1 = 0
+    for i in range(8):
+        for j in range(8):
+            i_ = (0 if i in [0, 2, 4, 6] else 1)
+            j_ = (0 if i in [0, 2, 4, 6] else 1)
+            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
+                if ex[i][j] != 'B':
+                    count_1 += 1
+            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
+                if ex[i][j] != 'W':
+                    count_1 += 1
+    count_2 = 0
+    for i in range(8):
+        for j in range(8):
+            i_ = (0 if i in [0, 2, 4, 6] else 1)
+            j_ = (0 if i in [0, 2, 4, 6] else 1)
+            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
+                if ex[i][j] != 'B':
+                    count_2 += 1
+            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
+                if ex[i][j] != 'W':
+                    count_2 += 1
+    return min(count_1, count_2)
+
+
+n, m = map(int, input().split())
+s = [list(input()) for i in range(n)]
+check = list()
+for i in range(n - 7):
+    for j in range(m - 7):
+        ex = [z[(0 + j):(8 + j)] for z in s[(0 + i):(8 + i)]]
+        check.append(check_WB(ex))
+print(min(check))
