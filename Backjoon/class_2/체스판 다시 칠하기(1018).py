@@ -62,75 +62,100 @@
 # print(rst)
 
 
-# 4중 for문
-N, M = map(int, input().split())
-board = list()
-for i in range(N):
-    board.append(input())
-repair = list()
+# # 4중 for문
+# N, M = map(int, input().split())
+# board = list()
+# for i in range(N):
+#     board.append(input())
+# repair = list()
+#
+# # i, j 로 8*8 크기 조절 = (N-i)*(M-j)
+# for i in range(N - 7):
+#     for j in range(M - 7):
+#         # 화이트로 시작한 경우 와 블랙으로 시작한 경우의 값을 초기화 = 0
+#         first_W = 0
+#         first_B = 0
+#         # 처음 자른 체스판부터 for 시작한다
+#         for q in range(i, i + 8):
+#             for p in range(j, j + 8):
+#                 # 행과 열의 인덱스의 합이 짝수인 경우, 일정한 한 색을 가지게 되고
+#                 # 홀수인 경우에도 다른 일정한 한 색을 가지게 된다.
+#                 if (q + p) % 2 == 0:
+#                     if board[q][p] != 'W':
+#                         first_W += 1
+#                     if board[q][p] != 'B':
+#                         first_B += 1
+#                 else:
+#                     if board[q][p] != 'B':
+#                         first_W += 1
+#                     if board[q][p] != 'W':
+#                         first_B += 1
+#         # 화이트로 시작했을 때 바꿔야 할 부분
+#         repair.append(first_W)
+#         # 블랙으로 시작했을 때 바꿔야 할 부분
+#         repair.append(first_B)
+#
+# # 바꿔야 할 개수의 최소값
+# print(min(repair))
 
-# i, j 로 8*8 크기 조절 = (N-i)*(M-j)
+# sys 모듈
+
+import sys
+
+# 잘라야하는 체스판의 크기가 정해져있고, 경우의 수가 2개밖에 안되니 하드코딩으로 짜둠
+start_B = [['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B']]
+
+start_W = [['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'],
+           ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'],
+           ['B', 'W', 'B', 'W', 'B', 'W', 'B', 'W']]
+
+# N: 세로 길이 / M: 가로 길이
+N, M = map(int, sys.stdin.readline().split(" "))
+
+# 인풋 받아서 8*8 배열에 저장
+field = [[] for _ in range(N)]
+for i in range(N):
+    line = sys.stdin.readline().strip()
+    for j in range(M):
+        field[i].append(line[j])
+
+# 결과값 64(8*8)로 셋팅
+result = 64
+
+# N*M 크기의 보드를 8*8 크기로 자르기 -> 8*8의 시작점(0,0)이 될 애 고르기
 for i in range(N - 7):
     for j in range(M - 7):
-        # 화이트로 시작한 경우 와 블랙으로 시작한 경우의 값을 초기화 = 0
-        first_W = 0
-        first_B = 0
-        # 처음 자른 체스판부터 for 시작한다
-        for q in range(i, i + 8):
-            for p in range(j, j + 8):
-                # 행과 열의 인덱스의 합이 짝수인 경우, 일정한 한 색을 가지게 되고
-                # 홀수인 경우에도 다른 일정한 한 색을 가지게 된다.
-                if (q + p) % 2 == 0:
-                    if board[q][p] != 'W':
-                        first_W += 1
-                    if board[q][p] != 'B':
-                        first_B += 1
-                else:
-                    if board[q][p] != 'B':
-                        first_W += 1
-                    if board[q][p] != 'W':
-                        first_B += 1
-        # 화이트로 시작했을 때 바꿔야 할 부분
-        repair.append(first_W)
-        # 블랙으로 시작했을 때 바꿔야 할 부분
-        repair.append(first_B)
 
-# 바꿔야 할 개수의 최소값
-print(min(repair))
+        count1 = 0
+        count2 = 0
 
+        # 시작점: field[i][j]
+        for r in range(8):
+            for c in range(8):
 
-# 홀수/짝수 if문
-def check_WB(ex):
-    count_1 = 0
-    for i in range(8):
-        for j in range(8):
-            i_ = (0 if i in [0, 2, 4, 6] else 1)
-            j_ = (0 if i in [0, 2, 4, 6] else 1)
-            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
-                if ex[i][j] != 'B':
-                    count_1 += 1
-            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
-                if ex[i][j] != 'W':
-                    count_1 += 1
-    count_2 = 0
-    for i in range(8):
-        for j in range(8):
-            i_ = (0 if i in [0, 2, 4, 6] else 1)
-            j_ = (0 if i in [0, 2, 4, 6] else 1)
-            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
-                if ex[i][j] != 'B':
-                    count_2 += 1
-            if (i_ == 0 and j_ == 0) or (i_ == 1 and j_ == 1):
-                if ex[i][j] != 'W':
-                    count_2 += 1
-    return min(count_1, count_2)
+                # 시작점부터 가로로 8, 세로로 8까지 돌면서
+                # B로 시작하는 체스판과 몇개가 다른지 카운팅
+                if field[i + r][j + c] != start_B[r][c]:
+                    count1 += 1
 
+                # W로 시작하는 체스판과 몇개가 다른지 카운팅
+                if field[i + r][j + c] != start_W[r][c]:
+                    count2 += 1
 
-n, m = map(int, input().split())
-s = [list(input()) for i in range(n)]
-check = list()
-for i in range(n - 7):
-    for j in range(m - 7):
-        ex = [z[(0 + j):(8 + j)] for z in s[(0 + i):(8 + i)]]
-        check.append(check_WB(ex))
-print(min(check))
+        # 가장 작은 값으로 result 갱신
+        result = min(result, count1, count2)
+
+# 최종 결과값 출력
+print(result)
