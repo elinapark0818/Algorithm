@@ -11,6 +11,8 @@ for i in range(b,(a*b)+1):
         break
 
 
+# 유클리드 호제법
+
 def gcd(a, b):
     while b > 0:
         a, b = b, a % b
