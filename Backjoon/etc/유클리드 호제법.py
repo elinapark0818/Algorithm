@@ -15,6 +15,8 @@ def gcd(x, y):
 
 
 print(gcd(1071, 1029))
+
+
 # 21
 
 # 최소공배수는 x와 y의 공통된 배수 가운데 최소값으로
@@ -27,4 +29,22 @@ def lcm(x, y):
 
 
 print(lcm(1071, 1029))
+
+
 # 52479
+
+
+# N개의 최소공배수
+
+def solution(arr):
+    def lcm(x, y):
+        return x * y // gcd(x, y)
+
+    while True:
+        arr.append(lcm(arr.pop(), arr.pop()))
+        if len(arr) == 1:
+            return arr[0]
+
+
+print(solution([2, 6, 8, 14]))
+# 168
