@@ -28,8 +28,10 @@
 #     return a * b / gcd(a, b)
 #
 #
-# # 유클리드 호제법으로 풀기
 #
+#
+# 유클리드 호제법으로 풀기
+
 a, b = map(int, input().split())
 
 
@@ -48,13 +50,12 @@ def lcm(a, b):
 print(gcd(a, b))
 print(lcm(a, b))
 #
+#
+#
+#
 # math 모듈로 풀기
 # import math
-#
+
 # a, b = map(int, input().split())
 # print(math.gcd(a, b))
 # print(math.lcm(a, b))
-
-#
-#
-#
