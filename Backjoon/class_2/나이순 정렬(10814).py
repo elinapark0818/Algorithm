@@ -38,7 +38,12 @@ for _ in range(n):
     age = int(age)
     m.append((age, name))
 
-m.sort(key=lambda a: (a[0]))
+m.sort(key=lambda m_list: (m_list[0]))
+# age 정렬
+# def Lambda(m_list):
+#     return m_list[0]
 
-for a in m:
-    print(a[0], a[1])
+for i in m:
+    print(i[0], i[1])
+
+
