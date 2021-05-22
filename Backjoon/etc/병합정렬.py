@@ -39,3 +39,14 @@ def merge_sort(arr):
             i += 1
             k += 1
     return arr
+
+
+n = int(input())
+num = []
+
+for _ in range(n):
+    num.append(int(input()))
+num = merge_sort(num)
+
+for i in num:
+    print(i)
