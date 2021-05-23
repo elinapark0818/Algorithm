@@ -10,6 +10,7 @@
 #     print(i[0])
 
 # 이 문제의 핵심은 10001로 미리 배열의 크기를 지정해 두고, 그 외 값을 저장하지 않는다는 점
+
 import sys
 
 N = int(sys.stdin.readline())
