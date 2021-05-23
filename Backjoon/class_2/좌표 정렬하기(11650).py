@@ -20,3 +20,16 @@ rst = sorted(arr)
 
 for j in range(n):
     print(rst[j][0], rst[j][1])
+
+# 다시 해보자
+
+N = int(sys.stdin.readline())
+
+arr = []
+for i in range(N):
+    [x, y] = map(int, sys.stdin.readline().split())
+    arr.append([x, y])
+result = sorted(arr)
+
+for j in range(N):
+    print(result[j][0], result[j][1])
