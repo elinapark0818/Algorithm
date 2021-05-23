@@ -6,4 +6,4 @@ for i in range(N):
     li.sort()
 
 for i in li:
-    print(i)
+    print(i[0])
