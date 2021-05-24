@@ -4,8 +4,10 @@ N = int(sys.stdin.readline())
 arr = []
 
 for i in range(N):
-    arr.append(list(map(int, sys.stdin.readline().split())))
-arr.sort(key=lambda x: (x[1], x[0]))
+    x, y = map(int, sys.stdin.readline().split())
+    arr.append([y, x])
 
-for i in arr:
-    print(i[0], i[1])
+rst = sorted(arr)
+
+for y, x in rst:
+    print(x, y)
