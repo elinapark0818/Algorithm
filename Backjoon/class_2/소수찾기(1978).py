@@ -16,23 +16,42 @@
 # print(rst)
 
 # 다른 풀이
-N = int(input())
-rst = list(map(int, input().split()))
+# N = int(input())
+# rst = list(map(int, input().split()))
+#
+#
+# def prime(num):
+#     if num == 1:
+#         return False
+#     elif num == 2:
+#         return True
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return False
+#     return True
+#
+#
+# count = 0
+# for i in rst:
+#     if prime(i):
+#         count += 1
+# print(count)
 
 
-def prime(num):
-    if num == 1:
-        return False
-    elif num == 2:
-        return True
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-    return True
+# 또 다른 풀이
 
+Case = int(input())
+num_list = list(map(int, input().split(' ')))
 
-count = 0
-for i in rst:
-    if prime(i):
-        count += 1
-print(count)
+res_counting = 0
+
+for i in num_list:
+    cnt = 0
+    if (i == 1):
+        continue
+    for j in range(2, i + 1):
+        if (i % j == 0):
+            cnt += 1
+    if (cnt == 1):
+        res_counting += 1
+print(res_counting)
