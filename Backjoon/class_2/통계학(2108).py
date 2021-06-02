@@ -8,8 +8,7 @@ nums.sort()
 
 k = Counter(nums).most_common()
 
-print("%.f" % (sum(nums) / N))
-# print(round(sum(nums) / N))
+print(round(sum(nums) / N))
 print(nums[N // 2])
 
 if len(nums) > 1:
