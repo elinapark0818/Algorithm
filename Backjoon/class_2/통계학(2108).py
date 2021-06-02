@@ -21,3 +21,6 @@ if len(nums) > 1:
     else:
         print(nums[0])
 
+# 범위구하기 : 마지막꺼에서 첫번째꺼 빼편 되겠쮸
+
+print(nums[-1] - nums[0])
