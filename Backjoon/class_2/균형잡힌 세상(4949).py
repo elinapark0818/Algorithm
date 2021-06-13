@@ -96,19 +96,28 @@
 #         r = 'no'
 #         print(r)
 
-
 while True:
-    stack = [];
-    push, pop = stack.append, stack.pop
     s = input()
-    if s == '.': break
-    r = 'yes'
-    for c in s:
-        if c in ['[', '(']:
-            push(c)
-        elif c == ']':
-            if not stack or pop() != '[': r = 'no';break
-        elif c == ')':
-            if not stack or pop() != '(': r = 'no';break
-    if stack: r = 'no'
-    print(r)
+    flag = True
+    if s == ".":
+        break
+    stack = []
+    for char in s:
+        if char in "([":
+            stack.append(char)
+        elif char == ")":
+            if stack and stack[-1] == "(":
+                stack.pop()
+            else:
+                flag = False
+                break
+        elif char == "]":
+            if stack and stack[-1] == "[":
+                stack.pop()
+            else:
+                flag = False
+                break
+    if not stack and flag:
+        print("yes")
+    else:
+        print("no")
