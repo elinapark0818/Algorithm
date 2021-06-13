@@ -1,25 +1,38 @@
-N = int(input())
-rst = []
-for i in range(N):
-    inputList = list(input())
-    stack = []
-    answer = True
+# N = int(input())
+# for i in range(N):
+#     a = input()
+#     b = list(a)
+#     rst = 0
+#     for i in b:
+#         if i == '(':
+#             rst += 1
+#         elif i == ')':
+#             rst -= 1
+#         if rst < 0:
+#             print('NO')
+#             break
+#     if rst > 0:
+#         print('NO')
+#     elif rst == 0:
+#         print('YES')
 
-    for j in range(len(inputList)):
-        if inputList[j] == "(":
-            stack.append(inputList[j])
+print('----------------------')
+
+T = int(input())
+
+for i in range(T):
+    li = list(input())
+
+    while len(li) != 0:
+        if li[0] == ')':
+            print("NO")
+            break
         else:
-            try:
-                if stack.pop() == "(":
-                    pass
-            except:
-                rst.append("no")
-                answer = False
+            if ')' in li:
+                li.remove(')')
+                li.remove('(')
+            else:
+                print("NO")
                 break
-    if len(stack):
-        rst.append("no")
-        continue
-    if answer:
-        rst.append("yes")
-for i in rst:
-    print(i)
+    if len(li) == 0:
+        print("YES")
