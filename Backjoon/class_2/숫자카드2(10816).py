@@ -14,3 +14,14 @@ for i in N:
         hashmap[i] = 1
 print(' '.join(str(hashmap[j]) if j in hashmap else '0' for j in M))
 
+# Counter
+
+from collections import Counter
+
+_ = stdin.readline()
+A = stdin.readline().split()
+_ = stdin.readline()
+B = stdin.readline().split()
+
+C = Counter(A)
+print(' '.join(f'{C[i]}' if i in C else '0' for i in B))
