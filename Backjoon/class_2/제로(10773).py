@@ -1,10 +1,10 @@
+
 K = int(input())
-for i in K:
-    num = list(int(input()))
-    rst = []
-    for j in num:
-        if j != 0:
-            rst.append(j)
-        if j == 0:
-            num.pop()
-    print(sum(int(rst)))
+rst = []
+for i in range(K):
+    num = int(input())
+    if num == 0:
+        rst.pop()
+    else:
+        rst.append(num)
+print(sum(rst))
