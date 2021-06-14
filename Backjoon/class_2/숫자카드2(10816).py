@@ -25,3 +25,24 @@ B = stdin.readline().split()
 
 C = Counter(A)
 print(' '.join(f'{C[i]}' if i in C else '0' for i in B))
+
+# Dictionary
+
+n = int(input())
+arr_n = list(map(int, stdin.readline().split()))
+m = int(input())
+arr_m = list(map(int, stdin.readline().split()))
+
+dic = dict()
+
+for i in arr_n:
+    try:
+        dic[i] += 1
+    except:
+        dic[i] = 1
+
+for i in arr_m:
+    try:
+        print(dic[i], end=' ')
+    except:
+        print(0, end=' ')
