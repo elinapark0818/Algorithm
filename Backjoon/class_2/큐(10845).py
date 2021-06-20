@@ -1,5 +1,7 @@
 from sys import stdin
+
 qu = []
+
 for _ in range(int(stdin.readline())):
     array = stdin.readline().split()
     if array[0] == 'push':
