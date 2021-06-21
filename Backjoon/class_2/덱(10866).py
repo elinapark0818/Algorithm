@@ -21,3 +21,5 @@ for i in range(n):
     command = list(sys.stdin.readline().split())
     if command[0] == 'push_front':
         dq.appendleft(command[1])
+    elif command[0] == 'push_back':
+        dq.append(command[1])
