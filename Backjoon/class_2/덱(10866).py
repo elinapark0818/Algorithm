@@ -23,3 +23,15 @@ for i in range(n):
         dq.appendleft(command[1])
     elif command[0] == 'push_back':
         dq.append(command[1])
+    elif command[0] == 'pop_front':
+        if empty() == 1:
+            print('-1')
+        else:
+            tmp = dq.popleft()
+            print(tmp)
+    elif command[0] == 'pop_back':
+        if empty() == 1:
+            print('-1')
+        else:
+            tmp = dq.pop()
+            print(tmp)
