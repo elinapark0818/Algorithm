@@ -35,3 +35,18 @@ for i in range(n):
         else:
             tmp = dq.pop()
             print(tmp)
+
+    elif command[0] == 'front':
+        if empty() == 1:
+            print('-1')
+        else:
+            print(dq[0])
+    elif command[0] == 'back':
+        if empty() == 1:
+            print('-1')
+        else:
+            print(dq[len(dq) - 1])
+    elif command[0] == 'size':
+        print(size())
+    elif command[0] == 'empty':
+        print(empty())
