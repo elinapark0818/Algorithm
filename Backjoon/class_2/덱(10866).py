@@ -2,9 +2,7 @@ from collections import deque
 import sys
 
 n = int(sys.stdin.readline())
-
 dq = deque()
-
 
 def empty():
     if len(dq) == 0:
@@ -12,10 +10,8 @@ def empty():
     else:
         return 0
 
-
 def size():
     return len(dq)
-
 
 for i in range(n):
     command = list(sys.stdin.readline().split())
@@ -35,7 +31,6 @@ for i in range(n):
         else:
             tmp = dq.pop()
             print(tmp)
-
     elif command[0] == 'front':
         if empty() == 1:
             print('-1')
