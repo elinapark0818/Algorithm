@@ -67,3 +67,4 @@ while people:
     order.append(people.pop(key))
 
 print('<'+', '.join(map(str, order))+'>')
+
