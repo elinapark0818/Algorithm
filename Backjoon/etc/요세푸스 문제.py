@@ -42,15 +42,28 @@
 #         print("%s, " % (i), end='')
 # print(">")
 
+#
+# n, k = map(int, input().split())
+#
+# circle = [i for i in range(1, n + 1)]
+# result = []
+# num = 0
+#
+# while len(result) != n:
+#     num = (num + (k - 1)) % len(circle)
+#     result.append(circle.pop(num))
+#
+# print("<%s>" % (", ".join(map(str, result))))
+
 
 n, k = map(int, input().split())
+people = [i for i in range(1, n+1)]
+key = 0
+temp = k - 1
+order = []
 
-circle = [i for i in range(1, n + 1)]
-result = []
-num = 0
+while people:
+    key = (key+temp) % len(people)
+    order.append(people.pop(key))
 
-while len(result) != n:
-    num = (num + (k - 1)) % len(circle)
-    result.append(circle.pop(num))
-
-print("<%s>" % (", ".join(map(str, result))))
+print('<'+', '.join(map(str, order))+'>')
