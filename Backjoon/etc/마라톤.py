@@ -1,24 +1,24 @@
-# def solution(participant, completion):
-#     participant.sort()
-#     completion.sort()
-#
-#     for i in range(len(completion)):
-#         if participant[i] != completion[i]:
-#             return participant[i]
-#
-#     return participant[-1]
+def solution(participant, completion):
+    participant.sort()
+    completion.sort()
+
+    for i in range(len(completion)):
+        if participant[i] != completion[i]:
+            return participant[i]
+
+    return participant[-1]
 
 
 # Counter()를 이용한 코드
-# import collections
-#
-#
-# def solution(participant, completion):
-#     participant.sort()
-#     completion.sort()
-#     result = collections.Counter(participant) - collections.Counter(completion)
-#
-#     return list(result)[0]
+import collections
+
+
+def solution(participant, completion):
+    participant.sort()
+    completion.sort()
+    result = collections.Counter(participant) - collections.Counter(completion)
+
+    return list(result.keys())[0]
 
 
 # hash()를 이용한 코드
