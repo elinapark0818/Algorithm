@@ -20,6 +20,23 @@
 
 # 정답은 71 : 48 + 23(17+6)
 
+# 1
+# 3  2
+# 6  3  1
+# 11 5  2  1
+# 19 8  3  1
+# 31 12 4  1
+# 48 17 5  1
+
+# n = 1
+# 1 = a + b + c + d
+# n = 2
+# 3 = 8a + 4b + 2c + d
+# n = 3
+# 6 = 27a + 9b + 3c + d
+# n = 4
+# 11 = 64a + 16b + 4c + d
+
 # ------------------------------------------------------------
 
 # 3. 반복구조
@@ -30,8 +47,9 @@
 
 # 정답 : 1, 8(1+7), 15(8+7), 22(15+7), 29(22+7) ...92(85+7)
 
-for i in range(1, 101, 7):
-    print(i)
+# 코드화
+# for i in range(1, 101, 7):
+#     print(i)
 # ------------------------------------------------------------
 # 4. 조건식
 # 다음은 1부터 100까지 합을 구하는 프로그램의 일부입니다.
@@ -42,25 +60,28 @@ for i in range(1, 101, 7):
 # count != 100
 # count < 101
 
-sum = 0
-count = 1
-while True:
-    sum += count
-    count += 1
-    if count == 100:
-        break
-print(sum)
+# 코드화
+# result = 0
+# count = 1
+# while True:
+#     result += count
+#     count += 1
+#     if count == 100:
+#         break
+# print(result)
 # ------------------------------------------------------------
-# 5. 논리식
-# 윤년 구하기, 연산자
-year = int(input())
-if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-    print('윤년입니다.')
-else:
-    print('윤년이 아닙니다.')
+# 5. 논리식(윤년)
+
+# 코드화
+# year = int(input())
+# if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+#     print('윤년입니다.')
+# else:
+#     print('윤년이 아닙니다.')
 
 # ------------------------------------------------------------
 # 6. 함수 구현
+
 
 # def solution(arr):
 #     number = 0
@@ -75,21 +96,23 @@ else:
 #         else:
 #             return result
 
-arr = list(map(int, input().split()))
 
-count = [0 for _ in range(10)]
-copy = [0 for _ in range(10)]
-new_count = []
-
-for i in range(0, len(arr)):
-    copy[i] = arr[i]
-    count[arr[i]] += 1
-
-for i in range(0, len(count)):
-    if count[i] > 1:
-        new_count.append(count[i])
-
-    if len(new_count) > 0:
-        print(new_count)
-    else:
-        print(-1)
+# 다른 코드
+# arr = list(map(int, input().split()))
+#
+# count = [0 for _ in range(10)]
+# copy = [0 for _ in range(10)]
+# new_count = []
+#
+# for i in range(0, len(arr)):
+#     copy[i] = arr[i]
+#     count[arr[i]] += 1
+#
+# for i in range(0, len(count)):
+#     if count[i] > 1:
+#         new_count.append(count[i])
+#
+#     if len(new_count) > 0:
+#         print(new_count)
+#     else:
+#         print(-1)
