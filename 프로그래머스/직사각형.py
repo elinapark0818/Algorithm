@@ -16,26 +16,29 @@
 #     return answer
 
 # 다른 코드
-import collections
+# import collections
+#
+#
+# def solution(v):
+#     answer = []
+#     for i in zip(*v):
+#         y = collections.Counter(i)
+#         answer.extend([i for i in y if y[i] == 1])
+#
+#     return answer
 
 
+# XOR 이용한 초간결 코드
 def solution(v):
+
     answer = []
-    for i in zip(*v):
-        y = collections.Counter(i)
-        answer.extend([i for i in y if y[i] == 1])
 
-    return answer
+    x = sorted(list(map(lambda x: x[0], v)))
+    y = sorted(list(map(lambda y: y[1], v)))
 
+    print('x : ', x, ', y : ', y)
 
-# XOR 을 이용한 코드
-def solution(v):
-    x = [i[0] for i in v]
-    y = [i[1] for i in v]
-
-    for i in range(2):
-        x[0] ^= x[i + 1]
-        y[0] ^= y[i + 1]
-    answer = [x[0], y[0]]
+    answer.append(x[0] ^ x[1] ^ x[2])
+    answer.append(y[0] ^ y[1] ^ y[2])
 
     return answer
