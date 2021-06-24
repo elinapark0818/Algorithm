@@ -20,6 +20,7 @@
 #
 #     return list(result)[0]
 
+
 # hash()를 이용한 코드
 def solution(participant, completion):
     answer = ''
