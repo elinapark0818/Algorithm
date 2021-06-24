@@ -8,6 +8,8 @@
 #
 #     return participant[-1]
 
+
+# Counter()를 이용한 코드
 # import collections
 #
 #
@@ -18,7 +20,7 @@
 #
 #     return list(result)[0]
 
-# 다른 코드
+# hash()를 이용한 코드
 def solution(participant, completion):
     answer = ''
     temp = 0
@@ -33,3 +35,14 @@ def solution(participant, completion):
         answer = dic[temp]
 
     return answer
+
+
+# zip()을 이용한 코드
+
+def solution(participant, completion):
+    participant.sort()
+    completion.sort()
+    for p, c in zip(participant, completion):
+        if p != c:
+            return p
+    return participant.pop()
