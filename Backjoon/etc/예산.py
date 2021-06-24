@@ -10,3 +10,12 @@ def solution(request, budget):
         else:
             break
     return answer
+
+
+# sort(), pop() 이용한 코드
+
+def solution(d, budget):
+    d.sort()
+    while budget < sum(d):
+        d.pop()
+    return len(d)
