@@ -6,4 +6,3 @@
 
 K, N = int(input().split())
 
-for i in range(K):
