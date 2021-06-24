@@ -19,3 +19,16 @@ def solution(d, budget):
     while budget < sum(d):
         d.pop()
     return len(d)
+
+
+# itertools 과 combinations 이용한 코드
+from itertools import combinations
+
+
+def solution(d, budget):
+    if sum(d) == budget:
+        return len(d)
+    for i in range(len(d), 1, -1):
+        for j in list(combinations(d, i)):
+            if sum(j) == budget:
+                return i
