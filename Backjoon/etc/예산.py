@@ -21,6 +21,19 @@ def solution(d, budget):
     return len(d)
 
 
+# sorted를 이용한 코드
+
+def solution(d, budget):
+    answer = 0
+    for i in sorted(d):
+        budget -= i
+        if budget < 0:
+            break
+        answer += 1
+
+    return answer
+
+
 # itertools 과 combinations 이용한 코드
 from itertools import combinations
 
