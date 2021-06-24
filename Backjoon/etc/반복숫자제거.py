@@ -12,10 +12,10 @@
 
 # 다른 풀이
 
-def solution(s):
-    a = []
-    for i in s:
-        if a[-1:] == [i]:
+def solution(arr):
+    answer = []
+    for i in arr:
+        if answer[-1:] == [i]:
             continue
-        a.append(i)
-    return a
+        answer.append(i)
+    return answer
