@@ -1,4 +1,3 @@
-
 # def solution(arr):
 #     answer = []
 #
@@ -10,8 +9,7 @@
 #
 #     return answer
 
-# 다른 풀이
-
+# 다른 코드
 def solution(arr):
     answer = []
     for i in arr:
@@ -19,3 +17,8 @@ def solution(arr):
             continue
         answer.append(i)
     return answer
+
+
+# 다른 코드
+def no_continuous(s):
+    return [a for b, a in enumerate(s) if a != s[b - 1]]
