@@ -6,3 +6,4 @@
 
 K, N = int(input().split())
 
+
