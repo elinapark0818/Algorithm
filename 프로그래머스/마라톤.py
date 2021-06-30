@@ -48,14 +48,41 @@
 #             return p
 #     return participant.pop()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 다시 풀어보기
 
 # 수많은 마라톤 선수들이 마라톤에 참여하였습니다.
 # 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
-# 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와
-# 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때,
+# 마라톤에 참여한 선수들의 이름이 담긴 배열 participant 와
+# 완주한 선수들의 이름이 담긴 배열 completion 이 주어질 때,
 # 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.
 
+# 배열의 원소와 배열의 원소를 비교하는 것. [i]
+# completion 의 길이는 participant 의 길이보다 1 작다. -> len() 값이 차이가 있군
+# 알파벳 소문자로 이루어져 있다. -> 정렬이 가능하겠군
+# 동명이인이 있을 수 있다.
+
 def solution(participant, completion):
-    answer = ''
-    return answer
+    participant.sort()
+    completion.sort()
+
+    for i in range(len(completion)):
+        if participant[i] != completion[i]:
+            print(participant[i])
