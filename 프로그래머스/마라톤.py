@@ -62,11 +62,24 @@
 # 알파벳 소문자로 이루어져 있다. -> 정렬이 가능하겠군
 # 동명이인이 있을 수 있다.
 
+# def solution(participant, completion):
+#     participant.sort()
+#     completion.sort()
+#
+#     for i in range(len(completion)):
+#         if participant[i] != completion[i]:
+#             return participant[i]
+#         return participant[-1]
+
+# 틀렸다
+
 def solution(participant, completion):
+    answer = ''
     participant.sort()
     completion.sort()
-
     for i in range(len(completion)):
         if participant[i] != completion[i]:
-            return participant[i]
-        return participant[-1]
+            answer = participant[i]
+            break
+    if answer == '': answer = participant[-1]
+    return answer
