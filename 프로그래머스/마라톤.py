@@ -49,23 +49,6 @@
 #     return participant.pop()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 다시 풀어보기
 
 # 수많은 마라톤 선수들이 마라톤에 참여하였습니다.
@@ -85,4 +68,5 @@ def solution(participant, completion):
 
     for i in range(len(completion)):
         if participant[i] != completion[i]:
-            print(participant[i])
+            return participant[i]
+        return participant[-1]
