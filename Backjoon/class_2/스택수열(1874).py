@@ -23,30 +23,51 @@
 # no_message에 False로 저장
 # exit(0)으로 다음 반복으로 넘어가도록 함
 
-import sys
+# n = int(input())
+# count = 0
+# stack = []
+# result = []
+# no_message = True
+#
+# for i in range(n):
+#     x = int(input())
+#
+#     while count < x:
+#         count += 1
+#         stack.append(count)
+#         result.append("+")
+#
+#     if stack[-1] == x:
+#         stack.pop()
+#         result.append("-")
+#     else:
+#         no_message = False
+#         exit(0)
+#
+# if no_message == False:
+#     print("NO")
+# else:
+#     print("\n".join(result))
 
-n = map(int, sys.stdin.readline())
-count = 0
-stack = []
-result = []
-no_message = True
 
-for i in range(0, n):
-    x = map(int, sys.stdin.readline())
-
-    while count < x:
+n = int(input())
+s = []
+op = []
+count = 1
+temp = True
+for i in range(n):
+    num = int(input())
+    while count <= num:
+        s.append(count)
+        op.append('+')
         count += 1
-        stack.append(count)
-        result.append("+")
-
-    if stack[-1] == x:
-        stack.pop()
-        result.append("-")
+    if s[-1] == num:
+        s.pop()
+        op.append('-')
     else:
-        no_message = False
-        exit(0)  # a clean exit without any errors / problems
-
-if no_message == False:
-    print("NO")
+        temp = False
+if temp == False:
+    print('NO')
 else:
-    print("\n".join(result))
+    for i in op:
+        print(i)
