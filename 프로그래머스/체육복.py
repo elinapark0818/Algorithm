@@ -42,16 +42,39 @@
 #     return n - len(l)
 
 
+# def solution(n, lost, reserve):
+#     s_reserve = set(reserve) - set(lost)
+#     s_lost = set(lost) - set(reserve)
+#
+#     for i in s_reserve:
+#         # 왼쪽부터 있으면 빌려주기
+#         if (i - 1) in s_lost:
+#             s_lost.remove(i - 1)
+#         # 왼쪽이 없으면 오른쪽으로 빌려주게끔
+#         elif (i + 1) in s_lost:
+#             s_lost.remove(i + 1)
+#
+#     return n - len(s_lost)
+
+
 def solution(n, lost, reserve):
-    s_reserve = set(reserve) - set(lost)
-    s_lost = set(lost) - set(reserve)
+    answer = 0
+    for i in range(1, n + 1):
+        if i not in lost:  # 안 잃어버린 학생
+            answer += 1
+        else:
+            if i in reserve:  # 잃어버렸지만 여분도 있는 학생
+                answer += 1
+                reserve.remove(i)
+                lost.remove(i)
 
-    for i in s_reserve:
-        # 왼쪽부터 있으면 빌려주기
-        if (i - 1) in s_lost:
-            s_lost.remove(i - 1)
-        # 왼쪽이 없으면 오른쪽으로 빌려주게끔
-        elif (i + 1) in s_lost:
-            s_lost.remove(i + 1)
+    for i in lost:  # 잃어버리고 여분도 없어서 빌려야 하는 학생
+        if i - 1 in reserve:
+            answer += 1
+            reserve.remove(i - 1)
 
-    return n - len(s_lost)
+        elif i + 1 in reserve:
+            answer += 1
+            reserve.remove(i + 1)
+
+    return answer
