@@ -5,3 +5,22 @@ tc = int(input())
 
 for i in range(tc):
     n, m = map(int, input().split())
+    ipt = list(map(int, input().split()))
+    ipt_ = [0 for i in range(n)]
+    ipt_[m] = 1
+    count = 0
+
+    while True:
+        if ipt[0] == max(ipt):
+            count += 1
+            if ipt_[0] == 1:
+                print(count)
+                break
+            else:
+                del ipt[0]
+                del ipt_[0]
+        else:
+            ipt.append(ipt[0])
+            del ipt[0]
+            ipt_.append(ipt_[0])
+            del ipt_[0]
