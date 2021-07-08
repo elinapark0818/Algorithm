@@ -4,5 +4,4 @@
 tc = int(input())
 
 for i in range(tc):
-    n = int(input())
-    m = input().split()
+    n, m = map(int, input().split())
