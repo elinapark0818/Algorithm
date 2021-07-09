@@ -5,12 +5,15 @@ for i in range(N):
     tree = list(map(int, sys.stdin.readline().split()))
     H = []
     for i in range(len(tree)):
-        if max(tree):
-            tree.pop(i)
-        elif min(tree):
-            tree.pop(i)
-        H.append(tree[i])
-        for i in range(len(H)):
-            H_sum = sum(H)
-            result = H_sum % len(H)
-            print(result)
+        tree.remove(max(tree))
+        tree.remove(min(tree))
+
+
+        #     tree.pop(i)
+        # elif min(tree):
+        #     tree.pop(i)
+        # H.append(tree)
+        # for i in range(len(H)):
+        #     H_sum = sum(H[i])
+        #     result = H_sum % len(H)
+        #     print(result)
