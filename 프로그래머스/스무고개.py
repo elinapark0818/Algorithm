@@ -13,10 +13,10 @@ print('-' * 10)
 
 import random
 
-n = random.randint(1, 100)
-print('1 ~ 100 까지의 숫자가 있습니다.')
+n = random.randint(200, 3000)
+print('200 ~ 3000 까지의 숫자가 있습니다.')
 
-for i in range(1, 21):
+for i in range(200, 3000):
     print('숫자를 입력해주세요.')
     rst = int(input())
 
